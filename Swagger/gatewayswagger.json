@@ -1,0 +1,1528 @@
+{
+    "swagger": "2.0",
+    "basePath": "/",
+    "paths": {
+        "/gatewaydata/api/v1/count/active": {
+            "get": {
+                "responses": {
+                    "500": {
+                        "description": "Internal Server Error"
+                    },
+                    "404": {
+                        "description": "Page Not Found"
+                    },
+                    "400": {
+                        "description": "Invalid input"
+                    },
+                    "200": {
+                        "description": "Success.."
+                    }
+                },
+                "summary": "Get the active gateways count",
+                "operationId": "ActiveCount",
+                "tags": [
+                    "gatewaydata"
+                ]
+            }
+        },
+        "/gatewaydata/api/v1/count/gatewayconfigdata": {
+            "get": {
+                "responses": {
+                    "500": {
+                        "description": "Internal Server Error"
+                    },
+                    "404": {
+                        "description": "Page Not Found"
+                    },
+                    "400": {
+                        "description": "Invalid input"
+                    },
+                    "200": {
+                        "description": "Success.."
+                    }
+                },
+                "summary": "Get the gateway config details",
+                "operationId": "GatewayConfigdetails",
+                "tags": [
+                    "gatewaydata"
+                ]
+            }
+        },
+        "/gatewaydata/api/v1/count/gatewaywrtmanu": {
+            "get": {
+                "responses": {
+                    "500": {
+                        "description": "Internal Server Error"
+                    },
+                    "404": {
+                        "description": "Page Not Found"
+                    },
+                    "400": {
+                        "description": "Invalid input"
+                    },
+                    "200": {
+                        "description": "Success.."
+                    }
+                },
+                "summary": "Get the gateway details with respect to manufacturer",
+                "operationId": "GatewayDetailsManufacturer",
+                "tags": [
+                    "gatewaydata"
+                ]
+            }
+        },
+        "/gatewaydata/api/v1/count/gatewaywrtservice": {
+            "get": {
+                "responses": {
+                    "500": {
+                        "description": "Internal Server Error"
+                    },
+                    "404": {
+                        "description": "Page Not Found"
+                    },
+                    "400": {
+                        "description": "Invalid input"
+                    },
+                    "200": {
+                        "description": "Success.."
+                    }
+                },
+                "summary": "Get the gateway details with respect to device service",
+                "operationId": "GatewayDetailsDeviceService",
+                "tags": [
+                    "gatewaydata"
+                ]
+            }
+        },
+        "/gatewaydata/api/v1/count/inactive": {
+            "get": {
+                "responses": {
+                    "500": {
+                        "description": "Internal Server Error"
+                    },
+                    "404": {
+                        "description": "Page Not Found"
+                    },
+                    "400": {
+                        "description": "Invalid input"
+                    },
+                    "200": {
+                        "description": "Success.."
+                    }
+                },
+                "summary": "Get the active gateways count",
+                "operationId": "InactiveCount",
+                "tags": [
+                    "gatewaydata"
+                ]
+            }
+        },
+        "/gatewaydata/api/v1/count/offline": {
+            "get": {
+                "responses": {
+                    "500": {
+                        "description": "Internal Server Error"
+                    },
+                    "404": {
+                        "description": "Page Not Found"
+                    },
+                    "400": {
+                        "description": "Invalid input"
+                    },
+                    "200": {
+                        "description": "Success.."
+                    }
+                },
+                "summary": "Get the offline gateways count",
+                "operationId": "OfflineCount",
+                "tags": [
+                    "gatewaydata"
+                ]
+            }
+        },
+        "/gatewaydata/api/v1/count/online": {
+            "get": {
+                "responses": {
+                    "500": {
+                        "description": "Internal Server Error"
+                    },
+                    "404": {
+                        "description": "Page Not Found"
+                    },
+                    "400": {
+                        "description": "Invalid input"
+                    },
+                    "200": {
+                        "description": "Success.."
+                    }
+                },
+                "summary": "Get the online gateways count",
+                "operationId": "OnlineCount",
+                "tags": [
+                    "gatewaydata"
+                ]
+            }
+        },
+        "/gatewaydata/api/v1/count/provisioned": {
+            "get": {
+                "responses": {
+                    "500": {
+                        "description": "Internal Server Error"
+                    },
+                    "404": {
+                        "description": "Page Not Found"
+                    },
+                    "400": {
+                        "description": "Invalid input"
+                    },
+                    "200": {
+                        "description": "Success.."
+                    }
+                },
+                "summary": "Get the total gateways provisioned",
+                "operationId": "ProvisionedCount",
+                "tags": [
+                    "gatewaydata"
+                ]
+            }
+        },
+        "/gatewaydata/api/v1/count/total": {
+            "get": {
+                "responses": {
+                    "500": {
+                        "description": "Internal Server Error"
+                    },
+                    "404": {
+                        "description": "Page Not Found"
+                    },
+                    "400": {
+                        "description": "Invalid input"
+                    },
+                    "200": {
+                        "description": "Success.."
+                    }
+                },
+                "summary": "Get the total gateways count",
+                "operationId": "TotalCount",
+                "tags": [
+                    "gatewaydata"
+                ]
+            }
+        },
+        "/gatewaydata/api/v1/count/unprovisioned": {
+            "get": {
+                "responses": {
+                    "500": {
+                        "description": "Internal Server Error"
+                    },
+                    "404": {
+                        "description": "Page Not Found"
+                    },
+                    "400": {
+                        "description": "Invalid input"
+                    },
+                    "200": {
+                        "description": "Success.."
+                    }
+                },
+                "summary": "Get the total gateways unprovisioned",
+                "operationId": "UnprovisionedCount",
+                "tags": [
+                    "gatewaydata"
+                ]
+            }
+        },
+        "/gatewaydata/api/v1/data/linegraph/{devicename}": {
+            "get": {
+                "responses": {
+                    "500": {
+                        "description": "Internal Server Error"
+                    },
+                    "404": {
+                        "description": "Page Not Found"
+                    },
+                    "400": {
+                        "description": "Invalid input"
+                    },
+                    "200": {
+                        "description": "Success.."
+                    }
+                },
+                "summary": "Get the data for the device specified to plot line graph",
+                "operationId": "LinegraphDevice",
+                "parameters": [
+                    {
+                        "name": "devicename",
+                        "in": "path",
+                        "required": true,
+                        "type": "string",
+                        "description": "Name of the device"
+                    }
+                ],
+                "tags": [
+                    "gatewaydata"
+                ]
+            }
+        },
+        "/gatewaydata/api/v1/data/minmax/{devicename}": {
+            "get": {
+                "responses": {
+                    "500": {
+                        "description": "Internal Server Error"
+                    },
+                    "404": {
+                        "description": "Page Not Found"
+                    },
+                    "400": {
+                        "description": "Invalid input"
+                    },
+                    "200": {
+                        "description": "Success.."
+                    }
+                },
+                "summary": "Get the minimum and maximum data values for the device specified to render a slider",
+                "operationId": "MinMaxDevice",
+                "parameters": [
+                    {
+                        "name": "devicename",
+                        "in": "path",
+                        "required": true,
+                        "type": "string",
+                        "description": "Name of the device"
+                    }
+                ],
+                "tags": [
+                    "gatewaydata"
+                ]
+            }
+        },
+        "/gatewaydata/api/v1/getiotdevices/{devicename}": {
+            "get": {
+                "responses": {
+                    "500": {
+                        "description": "Internal Server Error"
+                    },
+                    "404": {
+                        "description": "Page Not Found"
+                    },
+                    "400": {
+                        "description": "Invalid input"
+                    },
+                    "200": {
+                        "description": "Success.."
+                    }
+                },
+                "summary": "Get the list of IoT Devices connected to the gateway",
+                "operationId": "GatewayIoTDevicesList",
+                "parameters": [
+                    {
+                        "name": "devicename",
+                        "in": "path",
+                        "required": true,
+                        "type": "string",
+                        "description": "Name of the device"
+                    }
+                ],
+                "tags": [
+                    "gatewaydata"
+                ]
+            }
+        },
+        "/gatewaydata/api/v1/name/getdevicedetails/all": {
+            "get": {
+                "responses": {
+                    "500": {
+                        "description": "Internal Server Error"
+                    },
+                    "404": {
+                        "description": "Page Not Found"
+                    },
+                    "400": {
+                        "description": "Invalid input"
+                    },
+                    "200": {
+                        "description": "Success.."
+                    }
+                },
+                "summary": "Get the list of devices detail",
+                "operationId": "Devicesdetail",
+                "tags": [
+                    "gatewaydata"
+                ]
+            }
+        },
+        "/gatewaydata/api/v1/name/getdevicedetailsconfig/all": {
+            "get": {
+                "responses": {
+                    "500": {
+                        "description": "Internal Server Error"
+                    },
+                    "404": {
+                        "description": "Page Not Found"
+                    },
+                    "400": {
+                        "description": "Invalid input"
+                    },
+                    "200": {
+                        "description": "Success.."
+                    }
+                },
+                "summary": "Get the list of devices detail connected for configuration",
+                "operationId": "DevicesConfigdetail",
+                "tags": [
+                    "gatewaydata"
+                ]
+            }
+        },
+        "/gatewaydata/api/v1/name/getdevicenames": {
+            "get": {
+                "responses": {
+                    "500": {
+                        "description": "Internal Server Error"
+                    },
+                    "404": {
+                        "description": "Page Not Found"
+                    },
+                    "400": {
+                        "description": "Invalid input"
+                    },
+                    "200": {
+                        "description": "Success.."
+                    }
+                },
+                "summary": "Get the list of device names connected",
+                "operationId": "Devicenames",
+                "tags": [
+                    "gatewaydata"
+                ]
+            }
+        },
+        "/gatewaydata/api/v1/name/getdevicenames/all": {
+            "get": {
+                "responses": {
+                    "500": {
+                        "description": "Internal Server Error"
+                    },
+                    "404": {
+                        "description": "Page Not Found"
+                    },
+                    "400": {
+                        "description": "Invalid input"
+                    },
+                    "200": {
+                        "description": "Success.."
+                    }
+                },
+                "summary": "Get the list of all device names connected",
+                "operationId": "Devicenamesall",
+                "tags": [
+                    "gatewaydata"
+                ]
+            }
+        },
+        "/gatewaydata/api/v1/name/getgatewaydetails/all": {
+            "get": {
+                "responses": {
+                    "500": {
+                        "description": "Internal Server Error"
+                    },
+                    "404": {
+                        "description": "Page Not Found"
+                    },
+                    "400": {
+                        "description": "Invalid input"
+                    },
+                    "200": {
+                        "description": "Success.."
+                    }
+                },
+                "summary": "Get the list of gateways and their details",
+                "operationId": "Gatewaydetails",
+                "tags": [
+                    "gatewaydata"
+                ]
+            }
+        },
+        "/gatewaydata/api/v1/name/getgatewaydetailsconfig/all": {
+            "get": {
+                "responses": {
+                    "500": {
+                        "description": "Internal Server Error"
+                    },
+                    "404": {
+                        "description": "Page Not Found"
+                    },
+                    "400": {
+                        "description": "Invalid input"
+                    },
+                    "200": {
+                        "description": "Success.."
+                    }
+                },
+                "summary": "Get the list of gateways detail for configuration",
+                "operationId": "GatewaysConfigdetail",
+                "tags": [
+                    "gatewaydata"
+                ]
+            }
+        },
+        "/gatewaydata/api/v1/profiles": {
+            "get": {
+                "responses": {
+                    "500": {
+                        "description": "Internal Server Error"
+                    },
+                    "404": {
+                        "description": "Page Not Found"
+                    },
+                    "400": {
+                        "description": "Invalid input"
+                    },
+                    "200": {
+                        "description": "Success.."
+                    }
+                },
+                "summary": "Get the gateway profiles",
+                "operationId": "GatewayProfiles",
+                "tags": [
+                    "gatewaydata"
+                ]
+            }
+        },
+        "/gatewaydata/api/v1/services": {
+            "get": {
+                "responses": {
+                    "500": {
+                        "description": "Internal Server Error"
+                    },
+                    "404": {
+                        "description": "Page Not Found"
+                    },
+                    "400": {
+                        "description": "Invalid input"
+                    },
+                    "200": {
+                        "description": "Success.."
+                    }
+                },
+                "summary": "Get the list of gateway device services",
+                "operationId": "GatewayDeviceServices",
+                "tags": [
+                    "gatewaydata"
+                ]
+            }
+        },
+        "/gatewaydata/api/v1/telemetrydata/all": {
+            "get": {
+                "responses": {
+                    "500": {
+                        "description": "Internal Server Error"
+                    },
+                    "404": {
+                        "description": "Page Not Found"
+                    },
+                    "400": {
+                        "description": "Invalid input"
+                    },
+                    "200": {
+                        "description": "Success.."
+                    }
+                },
+                "summary": "Get the telemetry data from all devices",
+                "operationId": "TelemetryDataAll",
+                "tags": [
+                    "gatewaydata"
+                ]
+            }
+        },
+        "/gatewaydata/api/v1/telemetrydata/{devicename}": {
+            "get": {
+                "responses": {
+                    "500": {
+                        "description": "Internal Server Error"
+                    },
+                    "404": {
+                        "description": "Page Not Found"
+                    },
+                    "400": {
+                        "description": "Invalid input"
+                    },
+                    "200": {
+                        "description": "Success.."
+                    }
+                },
+                "summary": "Get the telemetry data for the device specified",
+                "operationId": "TelemetryDataDevice",
+                "parameters": [
+                    {
+                        "name": "devicename",
+                        "in": "path",
+                        "required": true,
+                        "type": "string",
+                        "description": "Name of the device"
+                    }
+                ],
+                "tags": [
+                    "gatewaydata"
+                ]
+            }
+        },
+        "/gatewaydata/api/v1/welcome": {
+            "get": {
+                "responses": {
+                    "500": {
+                        "description": "Internal Server Error"
+                    },
+                    "404": {
+                        "description": "Page Not Found"
+                    },
+                    "400": {
+                        "description": "Invalid input"
+                    },
+                    "200": {
+                        "description": "Success.."
+                    }
+                },
+                "summary": "Welcome message",
+                "operationId": "welcome",
+                "tags": [
+                    "gatewaydata"
+                ]
+            }
+        },
+        "/iotdevicedata/api/v1/count/active": {
+            "get": {
+                "responses": {
+                    "500": {
+                        "description": "Internal Server Error"
+                    },
+                    "404": {
+                        "description": "Page Not Found"
+                    },
+                    "400": {
+                        "description": "Invalid input"
+                    },
+                    "200": {
+                        "description": "Success.."
+                    }
+                },
+                "summary": "Get the active IoT Device count",
+                "operationId": "IoTDeviceActiveCount",
+                "tags": [
+                    "iotdevicedata"
+                ]
+            }
+        },
+        "/iotdevicedata/api/v1/count/inactive": {
+            "get": {
+                "responses": {
+                    "500": {
+                        "description": "Internal Server Error"
+                    },
+                    "404": {
+                        "description": "Page Not Found"
+                    },
+                    "400": {
+                        "description": "Invalid input"
+                    },
+                    "200": {
+                        "description": "Success.."
+                    }
+                },
+                "summary": "Get the inactive IoT Device count",
+                "operationId": "IoTDeviceInactiveCount",
+                "tags": [
+                    "iotdevicedata"
+                ]
+            }
+        },
+        "/iotdevicedata/api/v1/count/offline": {
+            "get": {
+                "responses": {
+                    "500": {
+                        "description": "Internal Server Error"
+                    },
+                    "404": {
+                        "description": "Page Not Found"
+                    },
+                    "400": {
+                        "description": "Invalid input"
+                    },
+                    "200": {
+                        "description": "Success.."
+                    }
+                },
+                "summary": "Get the offline IoT Devices count",
+                "operationId": "IoTDeviceOfflineCount",
+                "tags": [
+                    "iotdevicedata"
+                ]
+            }
+        },
+        "/iotdevicedata/api/v1/count/online": {
+            "get": {
+                "responses": {
+                    "500": {
+                        "description": "Internal Server Error"
+                    },
+                    "404": {
+                        "description": "Page Not Found"
+                    },
+                    "400": {
+                        "description": "Invalid input"
+                    },
+                    "200": {
+                        "description": "Success.."
+                    }
+                },
+                "summary": "Get the online IoT Devices count",
+                "operationId": "IoTDeviceOnlineCount",
+                "tags": [
+                    "iotdevicedata"
+                ]
+            }
+        },
+        "/iotdevicedata/api/v1/count/provisioned": {
+            "get": {
+                "responses": {
+                    "500": {
+                        "description": "Internal Server Error"
+                    },
+                    "404": {
+                        "description": "Page Not Found"
+                    },
+                    "400": {
+                        "description": "Invalid input"
+                    },
+                    "200": {
+                        "description": "Success.."
+                    }
+                },
+                "summary": "Get the total IoT Devices provisioned",
+                "operationId": "IoTDeviceProvisionedCount",
+                "tags": [
+                    "iotdevicedata"
+                ]
+            }
+        },
+        "/iotdevicedata/api/v1/count/total": {
+            "get": {
+                "responses": {
+                    "500": {
+                        "description": "Internal Server Error"
+                    },
+                    "404": {
+                        "description": "Page Not Found"
+                    },
+                    "400": {
+                        "description": "Invalid input"
+                    },
+                    "200": {
+                        "description": "Success.."
+                    }
+                },
+                "summary": "Get the total IOT Devices count",
+                "operationId": "IoTDevicesTotalCount",
+                "tags": [
+                    "iotdevicedata"
+                ]
+            }
+        },
+        "/iotdevicedata/api/v1/count/unprovisioned": {
+            "get": {
+                "responses": {
+                    "500": {
+                        "description": "Internal Server Error"
+                    },
+                    "404": {
+                        "description": "Page Not Found"
+                    },
+                    "400": {
+                        "description": "Invalid input"
+                    },
+                    "200": {
+                        "description": "Success.."
+                    }
+                },
+                "summary": "Get the total IoT Devices unprovisioned",
+                "operationId": "IoTDevicesUnprovisionedCount",
+                "tags": [
+                    "iotdevicedata"
+                ]
+            }
+        },
+        "/network/api/v1/ips/{networkid}": {
+            "get": {
+                "responses": {
+                    "500": {
+                        "description": "Internal Server Error"
+                    },
+                    "404": {
+                        "description": "Page Not Found"
+                    },
+                    "400": {
+                        "description": "Invalid input"
+                    },
+                    "200": {
+                        "description": "Success.."
+                    }
+                },
+                "summary": "List all IPs of the devices/gateways connected to the zerotier network",
+                "operationId": "ListIPs",
+                "parameters": [
+                    {
+                        "name": "networkid",
+                        "in": "path",
+                        "required": true,
+                        "type": "string",
+                        "description": "Id of the zerotier network"
+                    }
+                ],
+                "tags": [
+                    "network"
+                ]
+            }
+        },
+        "/provision/api/v1/gateway/create": {
+            "post": {
+                "responses": {
+                    "500": {
+                        "description": "Internal Server Error"
+                    },
+                    "404": {
+                        "description": "Page Not Found"
+                    },
+                    "400": {
+                        "description": "Invalid input"
+                    },
+                    "200": {
+                        "description": "Success.."
+                    }
+                },
+                "summary": "Create secret for gateway",
+                "operationId": "CreateSecret",
+                "parameters": [
+                    {
+                        "name": "payload",
+                        "required": true,
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/CreateSecretData"
+                        }
+                    }
+                ],
+                "tags": [
+                    "provision"
+                ]
+            }
+        },
+        "/provision/api/v1/gateway/create/symkey": {
+            "post": {
+                "responses": {
+                    "500": {
+                        "description": "Internal Server Error"
+                    },
+                    "404": {
+                        "description": "Page Not Found"
+                    },
+                    "400": {
+                        "description": "Invalid input"
+                    },
+                    "200": {
+                        "description": "Success.."
+                    }
+                },
+                "summary": "Create secret Symmetric Key for gateway",
+                "operationId": "CreateSecretSymkey",
+                "parameters": [
+                    {
+                        "name": "payload",
+                        "required": true,
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/CreateSecretData"
+                        }
+                    }
+                ],
+                "tags": [
+                    "provision"
+                ]
+            }
+        },
+        "/provision/api/v1/gateway/create/x509cert": {
+            "post": {
+                "responses": {
+                    "500": {
+                        "description": "Internal Server Error"
+                    },
+                    "404": {
+                        "description": "Page Not Found"
+                    },
+                    "400": {
+                        "description": "Invalid input"
+                    },
+                    "200": {
+                        "description": "Success.."
+                    }
+                },
+                "summary": "Create secret X509 Certificate for gateway",
+                "operationId": "CreateSecretX509",
+                "parameters": [
+                    {
+                        "name": "payload",
+                        "required": true,
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/CreateSecretData"
+                        }
+                    }
+                ],
+                "tags": [
+                    "provision"
+                ]
+            }
+        },
+        "/provision/api/v1/gateway/deprovision/symkey/{devicename}": {
+            "delete": {
+                "responses": {
+                    "500": {
+                        "description": "Internal Server Error"
+                    },
+                    "404": {
+                        "description": "Page Not Found"
+                    },
+                    "400": {
+                        "description": "Invalid input"
+                    },
+                    "200": {
+                        "description": "Success.."
+                    }
+                },
+                "summary": "Deprovision a gateway using Symmetric key",
+                "operationId": "GatewayDeprovisionSymkey",
+                "parameters": [
+                    {
+                        "name": "devicename",
+                        "in": "path",
+                        "required": true,
+                        "type": "string",
+                        "description": "Name of the device"
+                    },
+                    {
+                        "type": "string",
+                        "required": true,
+                        "in": "query",
+                        "description": "Device service name",
+                        "name": "service"
+                    }
+                ],
+                "tags": [
+                    "provision"
+                ]
+            }
+        },
+        "/provision/api/v1/gateway/deprovision/x509cert/{devicename}": {
+            "delete": {
+                "responses": {
+                    "500": {
+                        "description": "Internal Server Error"
+                    },
+                    "404": {
+                        "description": "Page Not Found"
+                    },
+                    "400": {
+                        "description": "Invalid input"
+                    },
+                    "200": {
+                        "description": "Success.."
+                    }
+                },
+                "summary": "Deprovision a gateway using X509 Certificate",
+                "operationId": "GatewayDeprovisionX509",
+                "parameters": [
+                    {
+                        "name": "devicename",
+                        "in": "path",
+                        "required": true,
+                        "type": "string",
+                        "description": "Name of the device"
+                    },
+                    {
+                        "type": "string",
+                        "required": true,
+                        "in": "query",
+                        "description": "Certificate serial number",
+                        "name": "serialnum"
+                    },
+                    {
+                        "type": "string",
+                        "required": true,
+                        "in": "query",
+                        "description": "Device service name",
+                        "name": "service"
+                    }
+                ],
+                "tags": [
+                    "provision"
+                ]
+            }
+        },
+        "/provision/api/v1/gateway/deprovision/{devicename}": {
+            "delete": {
+                "responses": {
+                    "500": {
+                        "description": "Internal Server Error"
+                    },
+                    "404": {
+                        "description": "Page Not Found"
+                    },
+                    "400": {
+                        "description": "Invalid input"
+                    },
+                    "200": {
+                        "description": "Success.."
+                    }
+                },
+                "summary": "Deprovision a gateway",
+                "operationId": "GatewayDeprovision",
+                "parameters": [
+                    {
+                        "name": "devicename",
+                        "in": "path",
+                        "required": true,
+                        "type": "string",
+                        "description": "Name of the device"
+                    },
+                    {
+                        "type": "string",
+                        "required": true,
+                        "in": "query",
+                        "description": "Certificate serial number",
+                        "name": "serialnum"
+                    },
+                    {
+                        "type": "string",
+                        "required": true,
+                        "in": "query",
+                        "description": "Device service name",
+                        "name": "service"
+                    },
+                    {
+                        "type": "string",
+                        "enum": [
+                            "X509",
+                            "Symmetric Key"
+                        ],
+                        "required": true,
+                        "in": "query",
+                        "description": "Authentication Type",
+                        "name": "auth"
+                    }
+                ],
+                "tags": [
+                    "provision"
+                ]
+            }
+        },
+        "/provision/api/v1/gateway/provision": {
+            "post": {
+                "responses": {
+                    "500": {
+                        "description": "Internal Server Error"
+                    },
+                    "404": {
+                        "description": "Page Not Found"
+                    },
+                    "400": {
+                        "description": "Invalid input"
+                    },
+                    "200": {
+                        "description": "Success.."
+                    }
+                },
+                "summary": "Provision gateway",
+                "operationId": "GatewayProvision",
+                "parameters": [
+                    {
+                        "name": "payload",
+                        "required": true,
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/ProvisionData"
+                        }
+                    }
+                ],
+                "tags": [
+                    "provision"
+                ]
+            }
+        },
+        "/provision/api/v1/gateway/provision/symkey": {
+            "post": {
+                "responses": {
+                    "500": {
+                        "description": "Internal Server Error"
+                    },
+                    "404": {
+                        "description": "Page Not Found"
+                    },
+                    "400": {
+                        "description": "Invalid input"
+                    },
+                    "200": {
+                        "description": "Success.."
+                    }
+                },
+                "summary": "Provision gateway using symmetric key",
+                "operationId": "GatewayProvisionSymkey",
+                "parameters": [
+                    {
+                        "name": "payload",
+                        "required": true,
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/ProvisionData"
+                        }
+                    }
+                ],
+                "tags": [
+                    "provision"
+                ]
+            }
+        },
+        "/provision/api/v1/gateway/provision/x509cert": {
+            "post": {
+                "responses": {
+                    "500": {
+                        "description": "Internal Server Error"
+                    },
+                    "404": {
+                        "description": "Page Not Found"
+                    },
+                    "400": {
+                        "description": "Invalid input"
+                    },
+                    "200": {
+                        "description": "Success.."
+                    }
+                },
+                "summary": "Provision gateway using X509 Certificate",
+                "operationId": "GatewayProvisionX509",
+                "parameters": [
+                    {
+                        "name": "payload",
+                        "required": true,
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/ProvisionData"
+                        }
+                    }
+                ],
+                "tags": [
+                    "provision"
+                ]
+            }
+        },
+        "/provision/api/v1/gateway/renew/symkey/{devicename}": {
+            "put": {
+                "responses": {
+                    "500": {
+                        "description": "Internal Server Error"
+                    },
+                    "404": {
+                        "description": "Page Not Found"
+                    },
+                    "400": {
+                        "description": "Invalid input"
+                    },
+                    "200": {
+                        "description": "Success.."
+                    }
+                },
+                "summary": "Renew Symmetric key generated for a gateway",
+                "operationId": "GatewayRenewSymkey",
+                "parameters": [
+                    {
+                        "name": "devicename",
+                        "in": "path",
+                        "required": true,
+                        "type": "string",
+                        "description": "Name of the device"
+                    },
+                    {
+                        "type": "string",
+                        "required": true,
+                        "in": "query",
+                        "description": "path where symmetric key stored in gateway securely",
+                        "name": "path"
+                    },
+                    {
+                        "type": "string",
+                        "required": true,
+                        "in": "query",
+                        "description": "Gateway host name/ip",
+                        "name": "host"
+                    },
+                    {
+                        "type": "string",
+                        "required": true,
+                        "in": "query",
+                        "description": "Device service name",
+                        "name": "service"
+                    }
+                ],
+                "tags": [
+                    "provision"
+                ]
+            }
+        },
+        "/provision/api/v1/gateway/renew/x509cert/{devicename}": {
+            "put": {
+                "responses": {
+                    "500": {
+                        "description": "Internal Server Error"
+                    },
+                    "404": {
+                        "description": "Page Not Found"
+                    },
+                    "400": {
+                        "description": "Invalid input"
+                    },
+                    "200": {
+                        "description": "Success.."
+                    }
+                },
+                "summary": "Renew Symmetric key generated for a gateway",
+                "operationId": "GatewayRenewX509",
+                "parameters": [
+                    {
+                        "name": "devicename",
+                        "in": "path",
+                        "required": true,
+                        "type": "string",
+                        "description": "Name of the device"
+                    },
+                    {
+                        "type": "string",
+                        "required": true,
+                        "in": "query",
+                        "description": "path where x509 certificate stored in gateway securely",
+                        "name": "path"
+                    },
+                    {
+                        "type": "string",
+                        "required": true,
+                        "in": "query",
+                        "description": "Gateway host name/ip",
+                        "name": "host"
+                    },
+                    {
+                        "type": "string",
+                        "required": true,
+                        "in": "query",
+                        "description": "Device service name",
+                        "name": "service"
+                    }
+                ],
+                "tags": [
+                    "provision"
+                ]
+            }
+        },
+        "/provision/api/v1/gateway/renew/{devicename}": {
+            "put": {
+                "responses": {
+                    "500": {
+                        "description": "Internal Server Error"
+                    },
+                    "404": {
+                        "description": "Page Not Found"
+                    },
+                    "400": {
+                        "description": "Invalid input"
+                    },
+                    "200": {
+                        "description": "Success.."
+                    }
+                },
+                "summary": "Renew secret generated for a gateway",
+                "operationId": "GatewayRenew",
+                "parameters": [
+                    {
+                        "name": "devicename",
+                        "in": "path",
+                        "required": true,
+                        "type": "string",
+                        "description": "Name of the device"
+                    },
+                    {
+                        "type": "string",
+                        "required": true,
+                        "in": "query",
+                        "description": "path where secret stored in gateway securely",
+                        "name": "path"
+                    },
+                    {
+                        "type": "string",
+                        "required": true,
+                        "in": "query",
+                        "description": "Gateway host name/ip",
+                        "name": "host"
+                    },
+                    {
+                        "type": "string",
+                        "required": true,
+                        "in": "query",
+                        "description": "Device service name",
+                        "name": "service"
+                    }
+                ],
+                "tags": [
+                    "provision"
+                ]
+            }
+        },
+        "/provision/api/v1/service/list": {
+            "get": {
+                "responses": {
+                    "500": {
+                        "description": "Internal Server Error"
+                    },
+                    "404": {
+                        "description": "Page Not Found"
+                    },
+                    "400": {
+                        "description": "Invalid input"
+                    },
+                    "200": {
+                        "description": "Success.."
+                    }
+                },
+                "summary": "Get the list of device service names",
+                "operationId": "GatewayDeviceServiceslist",
+                "tags": [
+                    "provision"
+                ]
+            }
+        }
+    },
+    "info": {
+        "title": "Intelligent Edge APIs",
+        "version": "1.0",
+        "description": "APIs used for Intelligent Edge Solution based on EdgeX Foundry platform"
+    },
+    "produces": [
+        "application/json"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "tags": [
+        {
+            "name": "gatewaydata",
+            "description": "Fetching gateway data operations"
+        },
+        {
+            "name": "provision",
+            "description": "Device provisioning operations"
+        },
+        {
+            "name": "network",
+            "description": "zerotier - network operations"
+        },
+        {
+            "name": "iotdevicedata",
+            "description": "Fetching iot device data operations"
+        }
+    ],
+    "definitions": {
+        "CreateSecretData": {
+            "required": [
+                "device"
+            ],
+            "properties": {
+                "apiVersion": {
+                    "type": "string",
+                    "description": "The api version"
+                },
+                "device": {
+                    "description": "Device/Gateway details",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/DeviceModel"
+                        }
+                    ]
+                }
+            },
+            "type": "object"
+        },
+        "DeviceModel": {
+            "required": [
+                "authMethod",
+                "description",
+                "name",
+                "path",
+                "profileName",
+                "protocols",
+                "serviceName"
+            ],
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "description": "Gateway/Device name provisioned"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Description of the gateway/device"
+                },
+                "adminState": {
+                    "type": "string",
+                    "description": "Admin state of the gateway/device",
+                    "example": "LOCKED",
+                    "enum": [
+                        "LOCKED",
+                        "UNLOCKED"
+                    ]
+                },
+                "operatingState": {
+                    "type": "string",
+                    "description": "Admin state of the gateway/device",
+                    "example": "UP",
+                    "enum": [
+                        "UP",
+                        "DOWN",
+                        "UNLOCKED"
+                    ]
+                },
+                "labels": {
+                    "type": "array",
+                    "description": "Other information to help search/retrieve devices",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "location": {
+                    "type": "string",
+                    "description": "Gateway/Device Location"
+                },
+                "serviceName": {
+                    "type": "string",
+                    "description": "Associated deviceservice name"
+                },
+                "profileName": {
+                    "type": "string",
+                    "description": "Associated deviceprofile name"
+                },
+                "autoEvents": {
+                    "type": "array",
+                    "description": "Auto event information",
+                    "items": {
+                        "$ref": "#/definitions/AutoEvents"
+                    }
+                },
+                "protocols": {
+                    "description": "Protocol details",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/ProtocolModel"
+                        }
+                    ]
+                },
+                "authMethod": {
+                    "type": "string",
+                    "description": "Authentication method",
+                    "example": "X509",
+                    "enum": [
+                        "X509",
+                        "Symmetric Key"
+                    ]
+                },
+                "path": {
+                    "type": "string",
+                    "description": "Secure device path to store secrets"
+                },
+                "notify": {
+                    "type": "boolean",
+                    "description": "If the notify property is set to true, the device service managing the device will receive a notification",
+                    "default": true
+                }
+            },
+            "type": "object"
+        },
+        "AutoEvents": {
+            "required": [
+                "interval"
+            ],
+            "properties": {
+                "interval": {
+                    "type": "string",
+                    "description": "Interval indicates how often the specific resource needs to be polled. It represents as a duration string. The format of this field is to be an unsigned integer followed by a unit which may be \"ns\", \"us\" (or \"\u00b5s\"), \"ms\", \"s\", \"m\", \"h\" representing nanoseconds, microseconds, milliseconds, seconds, minutes or hours. Eg, \"100ms\", \"24h\""
+                },
+                "onChange": {
+                    "type": "boolean",
+                    "description": "OnChange indicates whether the device service will generate an event only, if the reading value is different from the previous one. If true, only generate events when readings change",
+                    "default": false
+                },
+                "sourceName": {
+                    "type": "string",
+                    "description": "SourceName indicates the name of the resource or device command in the device profile which describes the event to generate"
+                }
+            },
+            "type": "object"
+        },
+        "ProtocolModel": {
+            "required": [
+                "Address",
+                "Port",
+                "Protocol",
+                "UnitID"
+            ],
+            "properties": {
+                "Protocol": {
+                    "type": "string",
+                    "description": "Protocol name"
+                },
+                "Address": {
+                    "type": "string",
+                    "description": "Host Name/IP adddress"
+                },
+                "Port": {
+                    "type": "string",
+                    "description": "Port number"
+                },
+                "UnitID": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "ProvisionData": {
+            "required": [
+                "device"
+            ],
+            "properties": {
+                "apiVersion": {
+                    "type": "string",
+                    "description": "The api version"
+                },
+                "device": {
+                    "description": "Device/Gateway details",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/DeviceModel"
+                        }
+                    ]
+                }
+            },
+            "type": "object"
+        }
+    },
+    "responses": {
+        "ParseError": {
+            "description": "When a mask can't be parsed"
+        },
+        "MaskError": {
+            "description": "When any error occurs on mask"
+        }
+    }
+}

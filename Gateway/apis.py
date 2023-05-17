@@ -270,8 +270,7 @@ class GatewayDeviceNames(Resource):
 @ns.route('/api/v1/getiotdevices/<devicename>')
 class GatewayIoTDeviceslist(Resource):
      '''Fetch gateway IoT Devices List'''
-     @ns.doc('GatewayIoTDevicesList')
-     @api.param('devicename','Name of device to fetch IP',type='string',required=True)
+     @ns.doc('GatewayIoTDevicesList',params = {'devicename':'Name of the device'})
      @api.response(200,'Success..')
      @api.response(400,'Invalid input')
      @api.response(404,'Page Not Found')
@@ -635,8 +634,7 @@ class GatewayTelemetryDataAll(Resource):
 @ns.route('/api/v1/telemetrydata/<devicename>')
 class GatewayTelemetryDataDevice(Resource):
      '''Telemetry data for a particular device '''
-     @ns.doc('TelemetryDataDevice')
-     @api.param('devicename','name of the iot device',type = 'string',required = True)
+     @ns.doc('TelemetryDataDevice',params = {'devicename':'Name of the device'})
      @cross_origin()
      @api.response(200,'Success..')
      @api.response(400,'Invalid input')
@@ -702,9 +700,8 @@ database=INFLUXDB_DATABASE)
 @ns.route('/api/v1/data/linegraph/<devicename>')
 class GatewayLinegraphdataDevice(Resource):
      '''Data for Linegraph for a particular device '''
-     @ns.doc('LinegraphDevice')
+     @ns.doc('LinegraphDevice',params = {'devicename':'Name of the device'})
      @cross_origin()
-     @api.param('devicename','Device name to fetch data for Linegraph',type='string',required=True)
      @api.response(200,'Success..')
      @api.response(400,'Invalid input')
      @api.response(404,'Page Not Found')
@@ -741,9 +738,8 @@ class GatewayLinegraphdataDevice(Resource):
 @ns.route('/api/v1/data/minmax/<devicename>')
 class GatewayMinMaxdataDevice(Resource):
      '''Maximum and minimum data values for a particular device '''
-     @ns.doc('MinMaxDevice')
+     @ns.doc('MinMaxDevice',params = {'devicename':'Name of the device'})
      @cross_origin()
-     @api.param('devicename','Device name to fetch minimum and maximum data values',type='string',required = True)
      @api.response(200,'Success..')
      @api.response(400,'Invalid input')
      @api.response(404,'Page Not Found')
@@ -900,7 +896,7 @@ dps = api.namespace('provision', description='Device provisioning operations')
 @dps.route('/api/v1/service/list')
 class DeviceServiceNames(Resource):
      '''Device Services Names'''
-     @ns.doc('GatewayDeviceServiceslist')
+     @dps.doc('GatewayDeviceServiceslist')
      @cross_origin()
      @api.response(200,'Success..')
      @api.response(400,'Invalid input')
@@ -956,7 +952,7 @@ create_args = api.model('CreateSecretData',{
 class CreateSecret(Resource):
      '''Create secret'''
      @api.expect(create_args, validate=True)
-     @ns.doc('CreateSecret')
+     @dps.doc('CreateSecret')
      @cross_origin()
      @api.response(200,'Success..')
      @api.response(400,'Invalid input')
@@ -980,7 +976,7 @@ class CreateSecret(Resource):
 class CreateX509(Resource):
      '''Create secret X509 Certificate'''
      @api.expect(create_args, validate=True)
-     @ns.doc('CreateSecretX509')
+     @dps.doc('CreateSecretX509')
      @cross_origin()
      @api.response(200,'Success..')
      @api.response(400,'Invalid input')
@@ -1005,7 +1001,7 @@ class CreateX509(Resource):
 class CreateSymkey(Resource):
      '''Create secret Symmetric Key'''
      @api.expect(create_args, validate=True)
-     @ns.doc('CreateSecretSymkey')
+     @dps.doc('CreateSecretSymkey')
      @cross_origin()
      @api.response(200,'Success..')
      @api.response(400,'Invalid input')
@@ -1041,7 +1037,7 @@ provision_args = api.model('ProvisionData',{
 class ProvisionGateway(Resource):
      '''Provision gateway'''
      @api.expect(provision_args, validate=True)
-     @ns.doc('GatewayProvision')
+     @dps.doc('GatewayProvision')
      @cross_origin()
      @api.response(200,'Success..')
      @api.response(400,'Invalid input')
@@ -1065,7 +1061,7 @@ class ProvisionGateway(Resource):
 class ProvisionX509(Resource):
      '''Provision gateway using X509 certificate'''
      @api.expect(provision_args, validate=True)
-     @ns.doc('GatewayProvisionX509')
+     @dps.doc('GatewayProvisionX509')
      @cross_origin()
      @api.response(200,'Success..')
      @api.response(400,'Invalid input')
@@ -1143,7 +1139,7 @@ class ProvisionX509(Resource):
 class ProvisionSymkey(Resource):
      '''Provision gateway using symmetric key'''
      @api.expect(provision_args, validate=True)
-     @ns.doc('GatewayProvisionSymkey')
+     @dps.doc('GatewayProvisionSymkey')
      @cross_origin()
      @api.response(200,'Success..')
      @api.response(400,'Invalid input')
@@ -1219,13 +1215,13 @@ class ProvisionSymkey(Resource):
          except Exception as e:
              return e
 
-@dps.route('/api/v1/gateway/renew/<string:devicename>')
+@dps.route('/api/v1/gateway/renew/<devicename>')
 class RenewGatewaySecret(Resource):
      '''Renew secrets for gateway'''
      @api.param('service','Device service name',type='string',required=True)
      @api.param('host','Gateway host name/ip',type='string',required=True)
      @api.param('path','path where secret stored in gateway securely',type='string',required=True)
-     @ns.doc('GatewayRenew',params = {'devicename' : 'Gateway name for which to renew X509 certificate'})
+     @dps.doc('GatewayRenew',params = {'devicename':'Name of the device'})
      @cross_origin()
      @api.response(200,'Success..')
      @api.response(400,'Invalid input')
@@ -1248,13 +1244,13 @@ class RenewGatewaySecret(Resource):
          except Exception as e:
              return e
 
-@dps.route('/api/v1/gateway/renew/x509cert/<string:devicename>')
+@dps.route('/api/v1/gateway/renew/x509cert/<devicename>')
 class RenewX509(Resource):
      '''Renew X509 certificate for a gateway'''
      @api.param('service','Device service name',type='string',required=True)
      @api.param('host','Gateway host name/ip',type='string',required=True)
      @api.param('path','path where x509 certificate stored in gateway securely',type='string',required=True)
-     @ns.doc('GatewayRenewX509',params = {'devicename' : 'Gateway name for which to renew X509 certificate'})
+     @dps.doc('GatewayRenewX509',params = {'devicename':'Name of the device'})
      @cross_origin()
      @api.response(200,'Success..')
      @api.response(400,'Invalid input')
@@ -1286,13 +1282,13 @@ class RenewX509(Resource):
          except Exception as e:
              return e
 
-@dps.route('/api/v1/gateway/renew/symkey/<string:devicename>')
+@dps.route('/api/v1/gateway/renew/symkey/<devicename>')
 class RenewSymKey(Resource):
      '''Renew symmetric key for a gateway'''
      @api.param('service','Device service name',type='string',required=True)
      @api.param('host','Gateway host name/ip',type='string',required=True)
      @api.param('path','path where symmetric key stored in gateway securely',type='string',required=True)
-     @ns.doc('GatewayRenewSymkey',params = {'devicename' : 'Gateway name for which to renew symmetric key'})
+     @dps.doc('GatewayRenewSymkey',params = {'devicename':'Name of the device'})
      @cross_origin()
      @api.response(200,'Success..')
      @api.response(400,'Invalid input')
@@ -1324,13 +1320,13 @@ class RenewSymKey(Resource):
          except Exception as e:
              return e
 
-@dps.route('/api/v1/gateway/deprovision/<string:devicename>')
+@dps.route('/api/v1/gateway/deprovision/<devicename>')
 class DeprovisionGateway(Resource):
      '''Deprovision Gateway'''
      @api.param('auth','Authentication Type',type='string',enum=['X509','Symmetric Key'],required=True)
      @api.param('service','Device service name',type='string',required=True)
      @api.param('serialnum','Certificate serial number',type='string',required=True)
-     @ns.doc('GatewayDeprovision',params = {'devicename' : 'Gateway name to deprovision'})
+     @dps.doc('GatewayDeprovision',params = {'devicename':'Name of the device'})
      @cross_origin()
      @api.response(200,'Success..')
      @api.response(400,'Invalid input')
@@ -1352,12 +1348,12 @@ class DeprovisionGateway(Resource):
          except Exception as e:
              return e
 
-@dps.route('/api/v1/gateway/deprovision/x509cert/<string:devicename>')
+@dps.route('/api/v1/gateway/deprovision/x509cert/<devicename>')
 class DeprovisionX509(Resource):
      '''Deprovision Gateway using X509 certificate '''
      @api.param('service','Device service name',type='string',required=True)
      @api.param('serialnum','Certificate serial number',type='string',required=True)
-     @ns.doc('GatewayDeprovisionX509',params = {'devicename' : 'Gateway name to deprovision'})
+     @dps.doc('GatewayDeprovisionX509',params = {'devicename':'Name of the device'})
      @cross_origin()
      @api.response(200,'Success..')
      @api.response(400,'Invalid input')
@@ -1383,11 +1379,11 @@ class DeprovisionX509(Resource):
          except Exception as e:
              return e
 
-@dps.route('/api/v1/gateway/deprovision/symkey/<string:devicename>')
+@dps.route('/api/v1/gateway/deprovision/symkey/<devicename>')
 class DeprovisionSymKey(Resource):
      '''Deprovision Gateway using symmetric key '''
      @api.param('service','Device service name',type='string',required=True)
-     @ns.doc('GatewayDeprovisionSymkey',params = {'devicename' : 'Gateway name to deprovision'})
+     @dps.doc('GatewayDeprovisionSymkey',params = {'devicename':'Name of the device'})
      @cross_origin()
      @api.response(200,'Success..')
      @api.response(400,'Invalid input')
@@ -1411,10 +1407,10 @@ class DeprovisionSymKey(Resource):
 # Define a namespace for your API routes
 zt = api.namespace('network', description='zerotier - network operations')
 
-@zt.route('/api/v1/ips/<string:networkid>')
+@zt.route('/api/v1/ips/<networkid>')
 class ListIPs(Resource):
      '''List IPs'''
-     @ns.doc('ListIPs',params={'networkid':'id of zerotier network to fetch member IPs'})
+     @zt.doc('ListIPs',params = {'networkid':'Id of the zerotier network'})
      @cross_origin()
      @api.response(200,'Success..')
      @api.response(400,'Invalid input')
@@ -1443,7 +1439,7 @@ iotd = api.namespace('iotdevicedata', description='Fetching iot device data oper
 @iotd.route('/api/v1/count/provisioned')
 class IoTDeviceProvisionCount(Resource):
      '''Count of provisioned IoT Devices'''
-     @ns.doc('IoTDeviceProvisionedCount')
+     @iotd.doc('IoTDeviceProvisionedCount')
      @cross_origin()
      @api.response(200,'Success..')
      @api.response(400,'Invalid input')
@@ -1463,7 +1459,7 @@ class IoTDeviceProvisionCount(Resource):
 @iotd.route('/api/v1/count/unprovisioned')
 class IoTDeviceUnProvisionCount(Resource):
      '''Count of unprovisioned IoT Devices'''
-     @ns.doc('IoTDevicesUnprovisionedCount')
+     @iotd.doc('IoTDevicesUnprovisionedCount')
      @cross_origin()
      @api.response(200,'Success..')
      @api.response(400,'Invalid input')
@@ -1486,7 +1482,7 @@ class IoTDeviceUnProvisionCount(Resource):
 @iotd.route('/api/v1/count/total')
 class IoTDeviceTotalCount(Resource):
      '''Count of total IoT Devices'''
-     @ns.doc('IoTDevicesTotalCount')
+     @iotd.doc('IoTDevicesTotalCount')
      @cross_origin()
      @api.response(200,'Success..')
      @api.response(400,'Invalid input')
@@ -1505,7 +1501,7 @@ class IoTDeviceTotalCount(Resource):
 @iotd.route('/api/v1/count/online')
 class IoTDeviceOnlineCount(Resource):
      '''Count of online IoT Devices'''
-     @ns.doc('IoTDeviceOnlineCount')
+     @iotd.doc('IoTDeviceOnlineCount')
      @cross_origin()
      @api.response(200,'Success..')
      @api.response(400,'Invalid input')
@@ -1528,7 +1524,7 @@ class IoTDeviceOnlineCount(Resource):
 @iotd.route('/api/v1/count/offline')
 class IoTDeviceOfflineCount(Resource):
      '''Count of offline IoT Devices'''
-     @ns.doc('IoTDeviceOfflineCount')
+     @iotd.doc('IoTDeviceOfflineCount')
      @cross_origin()
      @api.response(200,'Success..')
      @api.response(400,'Invalid input')
@@ -1551,7 +1547,7 @@ class IoTDeviceOfflineCount(Resource):
 @iotd.route('/api/v1/count/active')
 class IoTDeviceActiveCount(Resource):
      '''Count of active IoT Device'''
-     @ns.doc('IoTDeviceActiveCount')
+     @iotd.doc('IoTDeviceActiveCount')
      @cross_origin()
      @api.response(200,'Success..')
      @api.response(400,'Invalid input')
@@ -1582,7 +1578,7 @@ class IoTDeviceActiveCount(Resource):
 @iotd.route('/api/v1/count/inactive')
 class IoTDeviceInActiveCount(Resource):
      '''Count of inactive IoT Devices'''
-     @ns.doc('IoTDeviceInactiveCount')
+     @iotd.doc('IoTDeviceInactiveCount')
      @cross_origin()
      @api.response(200,'Success..')
      @api.response(400,'Invalid input')
